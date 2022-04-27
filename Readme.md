@@ -87,16 +87,16 @@ Feel free to update or add more endpoints to accommodate or improve your solutio
 
 ### Policy
 
-| fields         | type                            | comment                                       |
-| -------------- | ------------------------------- | --------------------------------------------- |
-| id             | string                          | Used to identify the policy                   |
-| customer       | [Customer](#Customer)           | Object holding the customer's informations    |
-| provider       | string                          | Name of the provider (Allianz, AXA…)          |
-| insuranceType  | [InsuranceType](#InsuranceType) | Type of the insurance (Liability, Household…) |
-| status         | [PolicyStatus](#PolicyStatus)   | Status of the insurance (Active, Cancelled)   |
-| startDate      | date                            | Date when the policy should start             |
-| endDate        | date                            | Date when the policy ends                     |
-| createdAt      | date                            | Date when the record was created              |
+| fields        | type                            | comment                                       |
+| ------------- | ------------------------------- | --------------------------------------------- |
+| id            | string                          | Used to identify the policy                   |
+| customer      | [Customer](#Customer)           | Object holding the customer's informations    |
+| provider      | string                          | Name of the provider (Allianz, AXA…)          |
+| insuranceType | [InsuranceType](#InsuranceType) | Type of the insurance (Liability, Household…) |
+| status        | [PolicyStatus](#PolicyStatus)   | Status of the insurance (Active, Cancelled)   |
+| startDate     | date                            | Date when the policy should start             |
+| endDate       | date                            | Date when the policy ends                     |
+| createdAt     | date                            | Date when the record was created              |
 
 ### Customer
 
@@ -118,9 +118,22 @@ Feel free to update or add more endpoints to accommodate or improve your solutio
 ## General questions
 
 - How much time did you spend working on the solution?
-- What’s the part of the solution you are most proud of?
 
+  > Around 5 hours
+
+- What’s the part of the solution you are most proud of?
   _You can share a code snippet here if you feel like it_
 
+  > The SearchInput component implementation because the implementation can be reused in any part of the application.
+
+  ```
+  <SearchInput onSearch={noop} searchPlaceholder="Search Policies"/>
+
+  ```
+
 - If you had more time, what other things you would like to do?
+
+  > I think the configurations should be more organized and in a separate files, example of it are the environment variables like the backend URL and etc.
+
 - Is there anything you would like to change in the current setup?
+  > The files structure and make the components more reusable, in this case it is much easier to reuse existing components.

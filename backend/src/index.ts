@@ -8,6 +8,8 @@ const prisma = new PrismaClient();
 app.use(express.json())
 
 app.get('/policies', async (req, res) => {
+  res.set('Access-Control-Allow-Origin', 'http://localhost:3000');
+
   const { search } = req.query;
 
   const or: Prisma.PolicyWhereInput = search
@@ -17,6 +19,7 @@ app.get('/policies', async (req, res) => {
         { customer: { firstName: { contains: search as string, mode: 'insensitive' } } },
         { customer: { lastName: { contains: search as string, mode: 'insensitive' } } }
       ],
+      AND: [{ status: { in : ['ACTIVE', 'PENDING']}}],
     }
     : {};
 
